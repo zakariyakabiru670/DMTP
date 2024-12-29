@@ -1,9 +1,10 @@
-import { describe, it, beforeEach, expect } from 'vitest';
-import { mockContractCall } from './test-utils';
+import { describe, it, beforeEach, expect, vi } from 'vitest';
+
+const mockContractCall = vi.fn();
 
 describe('Computation Token Contract', () => {
   beforeEach(() => {
-    mockContractCall.mockClear();
+    vi.clearAllMocks();
   });
   
   describe('mint', () => {
@@ -129,3 +130,4 @@ describe('Computation Token Contract', () => {
     });
   });
 });
+
